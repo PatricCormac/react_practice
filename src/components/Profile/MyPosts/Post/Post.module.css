@@ -1,0 +1,15 @@
+.item {
+  color: orange;
+  background-color: skyblue;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.item p {
+  margin: 0;
+}
+
+.item img {
+  width: 50px;
+  border-radius: 50%;
+}
