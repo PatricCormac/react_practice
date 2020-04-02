@@ -1,0 +1,29 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.items {
+  background-color: forestgreen;
+  padding: 10px;
+}
+
+.item {
+  font-size: 18px;
+  color: deepskyblue;
+  text-decoration: none;
+}
+
+.active {
+  color: red;
+}
+
+.messages {
+  background-color: darkviolet;
+  padding: 10px;
+}
+
+.message {
+  background-color: gainsboro;
+  margin-bottom: 20px;
+}

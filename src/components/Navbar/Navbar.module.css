@@ -10,8 +10,9 @@
 
 .item {
   color: yellow;
+  text-decoration: none;
 }
 
-.item.active {
+.active {
   color: red;
 }

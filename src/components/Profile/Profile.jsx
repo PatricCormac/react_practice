@@ -1,16 +1,12 @@
 import React from 'react'
-import c from './Profile.module.css'
 import MyPosts from './MyPosts/MyPosts'
+import ProfileInfo from './ProfileInfo/ProfileInfo'
+import c from './Profile.module.css'
 
 const Profile = () => {
   return (
     <div className={c.profile}>
-      <div>
-        <img src='https://placehold.it/1000x200'/>
-      </div>
-      <div>
-        ava + descr
-      </div>
+      <ProfileInfo />
       <MyPosts date='30.03.2020' />
     </div>
   )

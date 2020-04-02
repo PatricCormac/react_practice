@@ -2,6 +2,9 @@
   color: orange;
   background-color: skyblue;
   padding: 10px;
+}
+
+.item:not(:last-child) {
   margin-bottom: 30px;
 }
 
