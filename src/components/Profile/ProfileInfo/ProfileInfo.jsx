@@ -11,7 +11,7 @@ const ProfileInfo = () => {
         ava + descr
       </div>
     </div>
-  )
+  );
 }
 
 export default ProfileInfo

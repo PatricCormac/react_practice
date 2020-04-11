@@ -6,7 +6,7 @@ const Settings = (props) => {
     <div>
       Settings
     </div>
-  )
+  );
 }
 
 export default Settings
