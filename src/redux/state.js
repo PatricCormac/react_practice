@@ -1,3 +1,5 @@
+import { renderTree } from "../render"
+
 let state = {
   profilePage: {
     posts: [
@@ -6,6 +8,7 @@ let state = {
       {id: 3, postContent: 'Launched a project', likes: 8},
       {id: 4, postContent: 'Learning React', likes: 1},
     ],
+    newPostText: 'new post'
   },
   messagesPage: {
     dialogs: [
@@ -25,6 +28,25 @@ let state = {
       {id: 6, message: 'Thanks'}
     ],
   },
+}
+
+window.state = state
+
+export let addPost = () => {
+  let newPost = {
+    id: 5,
+    postContent: state.profilePage.newPostText,
+    likes: 0
+  }
+
+  state.profilePage.posts.push(newPost)
+  state.profilePage.newPostText = ''
+  renderTree(state)
+}
+
+export let inputPostText = (newPostText) => {
+  state.profilePage.newPostText = newPostText
+  renderTree(state)
 }
 
 export default state

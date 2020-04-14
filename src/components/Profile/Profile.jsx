@@ -8,7 +8,12 @@ const Profile = (props) => {
   return (
     <div className={c.profile}>
       <ProfileInfo />
-      <MyPosts posts={props.state.posts} date='30.03.2020' />
+      <MyPosts 
+        posts={props.profilePage.posts}
+        newPostText={props.profilePage.newPostText}
+        addPost={props.addPost}
+        inputPostText={props.inputPostText}
+        date='30.03.2020' />
     </div>
   );
 }

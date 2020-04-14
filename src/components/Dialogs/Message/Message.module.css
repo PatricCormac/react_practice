@@ -1,4 +1,6 @@
 .message {
   background-color: gainsboro;
-  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
 }
