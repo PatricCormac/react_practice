@@ -1,4 +1,6 @@
-import { renderTree } from "../render"
+let renderTree = () => {
+  console.log('State changed')
+}
 
 let state = {
   profilePage: {
@@ -32,7 +34,7 @@ let state = {
 
 window.state = state
 
-export let addPost = () => {
+export const addPost = () => {
   let newPost = {
     id: 5,
     postContent: state.profilePage.newPostText,
@@ -44,9 +46,13 @@ export let addPost = () => {
   renderTree(state)
 }
 
-export let inputPostText = (newPostText) => {
+export const inputPostText = (newPostText) => {
   state.profilePage.newPostText = newPostText
   renderTree(state)
+}
+
+export const subscribe = (observer) => {
+  renderTree = observer
 }
 
 export default state
