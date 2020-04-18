@@ -28,29 +28,32 @@ let store = {
       ],
     },
   },
-  getState() {
-    return this._state
-  },
   _callSubscriber() {
     console.log('State changed')
   },
-  addPost() {
-    let newPost = {
-      id: 5,
-      postContent: this._state.profilePage.newPostText,
-      likes: 0
-    }
-  
-    this._state.profilePage.posts.push(newPost)
-    this._state.profilePage.newPostText = ''
-    this._callSubscriber(this._state)
-  },
-  inputPostText(newPostText) {
-    this._state.profilePage.newPostText = newPostText
-    this._callSubscriber(this._state)
+
+  getState() {
+    return this._state
   },
   subscribe(observer) {
     this._callSubscriber = observer
+  },
+  
+  dispatch(action) {
+    if (action.type === 'ADD-POST') {
+      let newPost = {
+        id: 5,
+        postContent: this._state.profilePage.newPostText,
+        likes: 0
+      }
+    
+      this._state.profilePage.posts.push(newPost)
+      this._state.profilePage.newPostText = ''
+      this._callSubscriber(this._state)
+    } else if(action.type === 'INPUT-POST-TEXT') {
+      this._state.profilePage.newPostText = action.newPostText
+      this._callSubscriber(this._state)
+    }
   }
 }
 
