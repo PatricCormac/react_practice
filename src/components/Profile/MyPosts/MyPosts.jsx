@@ -1,21 +1,20 @@
 import React from 'react'
 import c from './MyPosts.module.css'
 import Post from './Post/Post'
-import {addPostActionCreator, onInputTextActionCreator} from '../../../redux/profile-reducer'
 
 const MyPosts = (props) => {
 
-  let postsElements = props.posts.map(p => <Post likesCount={p.likes} message={p.postContent} />)
+  let postsElements = props.posts.map(p => <Post likesCount={p.likes} message={p.postContent} />);
   
-  let newPost = React.createRef()
+  let newPost = React.createRef();
 
   let addPost = () => {
-    props.dispatch(addPostActionCreator())
+    props.addPost();
   }
 
   let onInputText = () => {
-    let textPost = newPost.current.value
-    props.dispatch(onInputTextActionCreator(textPost))
+    let textPost = newPost.current.value;
+    props.inputPostText(textPost);
   }
 
   return (
@@ -31,4 +30,4 @@ const MyPosts = (props) => {
   );
 }
 
-export default MyPosts
+export default MyPosts;
