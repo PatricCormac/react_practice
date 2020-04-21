@@ -5,7 +5,7 @@ import c from './Dialogs.module.css'
 import {onInputMessageActionCreator, sendMessageActionCreator} from '../../redux/dialogs-reducer'
 
 const Dialogs = (props) => {
-  let state = props.store.getState().messagesPage
+  let state = props.store.getState().dialogsPage
 
   let elementsDialogs = state.dialogs.map(d => <DialogsItem name={d.name} id={d.id} />)
   let elementMessages = state.messages.map(m => <Message message={m.message} />)

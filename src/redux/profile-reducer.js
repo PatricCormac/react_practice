@@ -1,7 +1,17 @@
-const ADD_POST = 'ADD-POST'
-const INPUT_POST_TEXT = 'INPUT-POST-TEXT'
+const ADD_POST = 'ADD-POST';
+const INPUT_POST_TEXT = 'INPUT-POST-TEXT';
 
-const profileReducer = (state, action) => {
+let initialState = {
+  posts: [
+    {id: 1, postContent: 'Installed Node.js', likes: 3},
+    {id: 2, postContent: 'Installed create-react-app', likes: 5},
+    {id: 3, postContent: 'Launched a project', likes: 8},
+    {id: 4, postContent: 'Learning React', likes: 1},
+  ],
+  newPostText: '',
+}
+
+const profileReducer = (state = initialState, action) => {
   switch(action.type) {
     case ADD_POST:
       let newPost = {
@@ -10,19 +20,19 @@ const profileReducer = (state, action) => {
         likes: 0
       }
     
-      state.posts.push(newPost)
-      state.newPostText = ''
-      return state
+      state.posts.push(newPost);
+      state.newPostText = '';
+      return state;
     case INPUT_POST_TEXT:
-      state.newPostText = action.newPostText
-      return state
+      state.newPostText = action.newPostText;
+      return state;
     default:
-      return state
+      return state;
   }
 }
 
-export const addPostActionCreator = () => ({type: ADD_POST})
+export const addPostActionCreator = () => ({type: ADD_POST});
 export const onInputTextActionCreator = (textPost) => 
-({type: INPUT_POST_TEXT, newPostText: textPost})
+({type: INPUT_POST_TEXT, newPostText: textPost});
 
-export default profileReducer
+export default profileReducer;
