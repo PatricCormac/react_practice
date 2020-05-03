@@ -9,7 +9,6 @@ const Profile = (props) => {
     <div className={c.profile}>
       <ProfileInfo />
       <MyPostsContainer
-        store={props.store}
         date='30.03.2020' />
     </div>
   );
