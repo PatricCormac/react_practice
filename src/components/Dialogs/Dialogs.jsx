@@ -6,8 +6,8 @@ import c from './Dialogs.module.css';
 const Dialogs = (props) => {
   let state = props.messagesPage;
 
-  let elementsDialogs = state.dialogs.map(d => <DialogsItem name={d.name} id={d.id} />);
-  let elementMessages = state.messages.map(m => <Message message={m.message} />);
+  let elementsDialogs = state.dialogs.map(d => <DialogsItem name={d.name} key={d.id} id={d.id} />);
+  let elementMessages = state.messages.map(m => <Message message={m.message} key={m.id} />);
   let newMessageText = state.newMessageText;
 
   let sendMessage = () => {
