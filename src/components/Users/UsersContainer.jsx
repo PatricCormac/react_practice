@@ -1,13 +1,13 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import Users from './Users';
-import { followAC, unfollowAC, setUsersAC } from '../../redux/users-reducer';
+import React from "react";
+import { connect } from "react-redux";
+import Users from "./Users";
+import { followAC, unfollowAC, setUsersAC } from "../../redux/users-reducer";
 
 let mapStateToProps = (state) => {
   return {
-    users: state.usersPage.users
-  }
-}
+    users: state.usersPage.users,
+  };
+};
 let mapDispatchToProps = (dispatch) => {
   return {
     follow: (userId) => {
@@ -18,8 +18,8 @@ let mapDispatchToProps = (dispatch) => {
     },
     setUsers: (users) => {
       dispatch(setUsersAC(users));
-    }
-  }
-}
+    },
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Users);
